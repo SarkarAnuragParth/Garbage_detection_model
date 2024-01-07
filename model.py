@@ -7,7 +7,7 @@ def build_model(args):
     tf.keras.layers.RandomRotation(0.2),
     ])
     preprocess_input = tf.keras.applications.mobilenet_v2.preprocess_input
-    IMG_SHAPE = args.img_shape
+    IMG_SHAPE = (args.img_shape,args.img_shape,3)
     base_model = tf.keras.applications.MobileNetV2(input_shape=IMG_SHAPE,
                                                include_top=False,
                                                weights='imagenet')
